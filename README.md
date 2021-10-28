@@ -1,6 +1,6 @@
 # `vue-custom-barrage`
 
-支持用户使用插槽自定义弹幕，使用简单,无须担心 XSS
+支持用户使用插槽自定义弹幕，使用简单, 无须担心 XSS
 
 ## [DEMO](http://1.14.65.92/)
 
@@ -24,41 +24,36 @@ Vue.use(Barrage)
 ## Example
 
 ```
-// template
-<Barrage ref='barrage' />
+<Barrage :data='barrageData' />
 
-// methods
 
-// 单条
-$refs.barrage.setBullet('text')
-
-// 多条
-$refs.barrage.setBullet([
-  'text1',
-  'text2',
-  'text3',
-])
+export default {
+  data() {
+    return {
+      barrageData: ['text1', 'text2', 'text3']
+    }
+  }
+}
 ```
 
 ```
-// template
-<Barrage ref='barrage'>
+<Barrage :data='barrageData'>
   <template #default='data'>
     <div>自定义弹幕 {{ data.text }}</div>
   </template>
 </Barrage>
 
-// methods
-
-// 单条
-$refs.barrage.setBullet({ text: '内容' })
-
-// 多条
-$refs.barrage.setBullet([
-  { text: '内容1' },
-  { text: '内容2' },
-  { text: '内容3' },
-])
+export default {
+  data() {
+    return {
+      barrageData: [
+        { text: 'text1' },
+        { text: 'text2' },
+        { text: 'text3' },
+      ]
+    }
+  }
+}
 ```
 
 ## Options
