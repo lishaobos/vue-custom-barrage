@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-barrage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于 vue 的自定义弹幕组件",
   "author": "李少博",
   "homepage": "https://github.com/lishaobos/vue-custom-barrage#readme",
@@ -10,9 +10,6 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
-    "lib"
-  ],
   "typings": "types/index.d.ts",
   "repository": {
     "type": "git",
