@@ -69,7 +69,7 @@ export default {
 
         barrage.setBullet([...data])
         data.length = 0
-      })
+      }, { immediate: true })
     }
   }
 }
