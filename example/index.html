@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="../lib/index.js"></script>
+    <style>
+      .my-barrage {
+        height: 400px;
+        width: 50%;
+        border: 1px solid;
+      }
+    </style>
+</head>
+
+<body>
+  <div id="app">
+    <Barrage 
+      class="my-barrage"
+      :pause='pause'
+      :show-area='area'
+      :speed="speed || 1"
+      :data="barrageData"
+      touch-pause
+      :defer='defer || 0.1'
+    >
+      <template #default='data'>
+        {{ data }}
+      </template>
+    </Barrage>
+
+    <p>
+      <button @click='pause = !pause'>暂停/恢复</button>
+    </p>
+    <p>
+      <button @click="biubiu">发射</button>
+    </p>
+    <p>
+      发射数量：<input type="number" v-model.number="barrageNum" min="1">
+    </p>
+    <p>
+      发射速度：<input type="number" v-model.number="speed">
+    </p>
+    <p>
+      发射延迟：<input type="number" v-model.number="defer">
+    </p>
+    <p>
+      发射内容：<input type="text" v-model="barrageText">
+    </p>
+    <p>
+      弹幕区域：
+      <select v-model="area" placeholder="请选择">
+        <option label="all" value="all"></option>
+        <option label="top" value="top"></option>
+        <option label="middle" value="middle"></option>
+        <option label="bottom" value="bottom"></option>
+      </select>
+    </p>
+  </div>
+</body>
+<script>
+  Vue.use(Barrage);
+  const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        barrageText: '默认弹幕...',
+        barrageNum: 100,
+        area: 'all',
+        speed: 5,
+        defer: 0.1,
+        pause: false,
+        barrageData: []
+      }
+    },
+    methods: {
+      biubiu() {
+        const { barrageText, barrageNum, barrageData } = this
+        const data = []
+        for (let i = 0; i < barrageNum; i++) {
+          const random = Math.floor(Math.random() * 20)
+          data.push(`${new Array(random).fill('+').join('')}${barrageText}`)
+        }
+        barrageData.push(...data)
+      }
+    }
+  })
+</script>
+
+</html>
