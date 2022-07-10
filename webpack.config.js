@@ -10,7 +10,8 @@ module.exports = {
     filename: 'index.js',
     library: {
       name: 'Barrage',
-      type: 'umd'
+      type: 'umd',
+      export: 'default'
       // type: 'module'
     }
   },
