@@ -24,7 +24,7 @@ Vue.use(Barrage)
 ## Example
 
 ```
-<Barrage :data='barrageData' />
+<Barrage :data='barrageData' style='height: 400px' />
 
 
 export default {
@@ -37,7 +37,7 @@ export default {
 ```
 
 ```
-<Barrage :data='barrageData'>
+<Barrage :data='barrageData' style='height: 400px'>
   <template #default='data'>
     <div>自定义弹幕 {{ data.text }}</div>
   </template>
