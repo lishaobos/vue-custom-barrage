@@ -104,6 +104,7 @@ export default {
 .barrage-container-touch .barrage-bullet:hover {
   cursor: pointer;
   animation-play-state: paused;
+  z-index: 1;
 }
 
 </style>  
