@@ -2,7 +2,7 @@
 
 支持用户使用插槽自定义弹幕，使用简单, 无须担心 XSS
 
-## [DEMO](http://1.14.65.92/)
+## [DEMO](https://lishaobos.github.io/vue-custom-barrage/)
 
 
 ## Install
