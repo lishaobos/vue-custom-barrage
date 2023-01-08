@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader')
+const path = require('path')
 
 module.exports = {
   entry: './src/index.js',
@@ -6,7 +7,7 @@ module.exports = {
   //   outputModule: true,
   // },
   output: {
-    path: __dirname + '/lib',
+    path: path.resolve('./lib'),
     filename: 'index.js',
     library: {
       name: 'Barrage',
